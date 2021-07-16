@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   argv1_neg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chael-ha <chael-ha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/07 17:05:57 by chael-ha          #+#    #+#             */
-/*   Updated: 2021/07/15 19:55:34 by chael-ha         ###   ########.fr       */
+/*   Created: 2021/07/14 15:21:36 by chael-ha          #+#    #+#             */
+/*   Updated: 2021/07/15 20:17:46 by chael-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	argv1_neg(char **argv)
 {
-	size_t	i;
-
-	i = 0;
-	if ((!s1 || !s2) && n == 0)
-		return (0);
-	while ((s1[i] || s2[i]) && i < n)
-	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	return (0);
+	write(2, "no such file or directory: ", 27);
+	write(2, argv[1], ft_strlen(argv[1]));
+	write(2, "\n", 1);
+	open(argv[4], O_RDWR | O_CREAT | O_TRUNC, 0644);
+	exit(1);
 }
